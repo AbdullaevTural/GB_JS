@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VueJS_HW_1_2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="task2">
+      <button @click="addElement(newElement)">Добавить</button>
+      <ul id="list">
+        <li>Элемент списка</li>
+        <li>Элемент списка</li>
+        <li>Элемент списка</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#task2",
+        data: {
+          newElement: "Новый элемент списка",
+        },
+
+        methods: {
+          addElement(newElement) {
+            let ul = document.getElementById("list");
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(newElement));
+            ul.appendChild(li);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
