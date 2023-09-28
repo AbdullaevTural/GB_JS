@@ -1,0 +1,77 @@
+.banner-blog
+    margin-bottom: 200px
+    position: relative
+    display: flex
+    justify-content: center
+
+    &__img
+        width: 100vw
+        overflow: hidden
+
+    &__center-text
+        position: absolute
+        bottom: 0px
+        left: calc(50vw - 251.5px)
+        padding: 41px 78px
+        background-color: #FFF
+        border-radius: 37px 37px 0px 0px
+
+    &__title
+        color: $headerColor
+        font-family: 'DM Serif Display', serif
+        font-size: 50px
+        line-height: 125%
+
+    &__breadcrumbs
+        list-style-type: none
+        display: flex
+        justify-content: center
+        align-items: center
+
+        &-a
+            color: $textColor
+            font-size: 22px
+            line-height: 150%
+            letter-spacing: 0.22px
+
+        &-li:not(:last-child)::after
+            padding-left: 10px
+            padding-right: 10px
+            content: "/"
+
+.info-blog
+    display: flex
+    justify-content: center
+
+    &__container
+        margin-top: 27px
+        padding: 22px
+        display: flex
+        gap: 65px
+        flex-direction: row
+        margin-bottom: 150px
+
+    &__img
+        border-radius: 50px
+        background: #C4C4C4
+        min-width: 569px
+
+    &__text-container
+        display: flex
+        flex-direction: column
+        align-items: start
+        justify-content: space-around
+
+    &__title
+        color: $headerColor
+        font-family: 'DM Serif Display', serif
+        font-size: 25px
+        max-width: 463px
+
+    &__text
+        color: $textColor
+        font-size: 22px
+        font-weight: 400
+        line-height: 150%
+        letter-spacing: 0.22px
+        max-width: 469px
