@@ -12,7 +12,7 @@
 import Navigation from './Navigation.vue';
 
 export default {
-    name: 'Header',
+    name: 'TheHeader',
 
     components: {
         Navigation

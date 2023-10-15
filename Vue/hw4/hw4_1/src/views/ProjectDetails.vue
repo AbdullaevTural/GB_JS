@@ -3,7 +3,7 @@
         <div class="project-details__intro-content"></div>
     </div>
     <div class="project-details center">
-        <div v-for="info in getProjectInfo" class="project-details__content">
+        <div v-for="info in getProjectInfo" :key="info.id" class="project-details__content">
             <h2 class="project-details__heading">{{ info.heading }}</h2>
             <div class="project-details__text-box">
                 <p class="project-details__text">{{ info.firstparagraph }}</p>
@@ -16,10 +16,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Slider from '../components/Slider.vue'
+import Slider from '../components/TheSlider.vue'
 
 export default {
-    name: 'ProjectDetails',
+    name: 'TheProjectDetails',
 
     components: {
         Slider

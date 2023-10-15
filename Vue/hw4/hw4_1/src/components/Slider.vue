@@ -5,7 +5,7 @@
     }" :zoom="true" :navigation="true" :pagination="{
     clickable: true,
 }" :modules="modules" class="mySwiper">
-        <swiper-slide v-for="picture in sliderPictures">
+        <swiper-slide v-for="picture in sliderPictures" :key="picture.id">
             <div class="swiper-zoom-container">
                 <img class="swiper-slide__img" :src="picture.src" :alt="picture.alt" />
             </div>
