@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="1.js" defer></script>
+  <script src="2.js" defer></script>
+</head>
+<body>
+  <div>
+    <h1 >Отзывы</h1>
+    <div id="errorField">
+
+    </div>
+    <form  id="reviewForm">
+      <label for="productField">Выберите продукт</label>
+      <select name="product" id="productField">
+        <option value="" selected>Выберите продукт
+        </option>
+      </select>
+      <label for="reviewField">Отзыв</label>
+      <input name="review" id="reviewField"></input>
+      <button type="submit">
+        Добавить
+      </button>
+    </form>
+    <div >
+      <div id="reviewList"></div>
+    </div>
+  </div>
+</body>
+</html>
