@@ -16,7 +16,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Slider from '../components/TheSlider.vue'
+import Slider from '../components/Slider.vue'
 
 export default {
     name: 'ProjectDetails',

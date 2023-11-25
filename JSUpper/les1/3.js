@@ -23,6 +23,23 @@
 Десерт Тирамису
 Десерт Чизкейк
 */
+const data = new Map();
+const dishes = new Map();
+dishes.set("Маргарита", "Пицца");
+dishes.set("Пепперони", "Пицца");
+dishes.set("Три сыра", "Пицца");
+dishes.set("Филадельфия", "Суши");
+dishes.set("Калифорния", "Суши");
+dishes.set("Чизмаки", "Суши");
+dishes.set("Сеякемаки", "Суши");
+dishes.set("Чизкейк", "Десерт");
+dishes.set("Тирамису", "Десерт");
+
+const cheifs = new Map();
+cheifs.set("Пицца", "Олег");
+cheifs.set("Суши", "Андрей");
+cheifs.set("Десерт", "Анна");
+
 
 // Посетитель ресторана.
 class Client {
@@ -31,6 +48,29 @@ class Client {
         this.lastname = lastname;
     }
 
+
+}
+
+
+// Вам необходимо реализовать класс, который управляет заказами и поварами.
+class Manager {
+    newOrder(client, ...order) {
+
+        for (const value of order) {
+            // Проверка на наличие блюда
+            if (!dishes.has(value.name)) {
+                return console.log(
+                    `${value.type} "${value.name}" - такого блюда не существует.`
+                ); // Выходим из функции с ошибкой
+            }
+        }
+
+        console.log(`Клиент ${client.firstname} заказал:`);
+
+        for (const value of order) {
+            Manager.clientInfo(client, dishes, cheifs, value, data); // Идем к клиенту проверять прошлые заказы
+        }
+    }
     static clientInfo(client, dishes, cheifs, value, data) {
         const dataKey = `${client.lastname} ${client.firstname} ${value.name}`;
 
@@ -49,49 +89,12 @@ class Client {
       )}; готовит повар ${cheifs.get(value.type)}`
         );
     }
-}
-
-const data = new Map();
-// Вам необходимо реализовать класс, который управляет заказами и поварами.
-class Manager {
-
     constructor(data) {
 
         this.data = data;
     }
 
-    newOrder(client, ...order) {
-        const dishes = new Map();
-        dishes.set("Маргарита", "Пицца");
-        dishes.set("Пепперони", "Пицца");
-        dishes.set("Три сыра", "Пицца");
-        dishes.set("Филадельфия", "Суши");
-        dishes.set("Калифорния", "Суши");
-        dishes.set("Чизмаки", "Суши");
-        dishes.set("Сеякемаки", "Суши");
-        dishes.set("Чизкейк", "Десерт");
-        dishes.set("Тирамису", "Десерт");
 
-        const cheifs = new Map();
-        cheifs.set("Пицца", "Олег");
-        cheifs.set("Суши", "Андрей");
-        cheifs.set("Десерт", "Анна");
-
-        for (const value of order) {
-            // Проверка на наличие блюда
-            if (!dishes.has(value.name)) {
-                return console.log(
-                    `${value.type} "${value.name}" - такого блюда не существует.`
-                ); // Выходим из функции с ошибкой
-            }
-        }
-
-        console.log(`Клиент ${client.firstname} заказал:`);
-
-        for (const value of order) {
-            Client.clientInfo(client, dishes, cheifs, value, data); // Идем к клиенту проверять прошлые заказы
-        }
-    }
 }
 
 // Можно передать внутрь конструктора что-либо, если необходимо.

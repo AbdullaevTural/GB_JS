@@ -9,7 +9,7 @@
                     </svg>
                 </button>
             </li>
-            <li v-for="page in pages" :key="page.id" class="pagination__item">
+            <li v-for="page in pages" class="pagination__item">
                 <button @click="onClickPage(page.name)" :disabled="page.isDisabled"
                     :class="{ pagination__item_active: isPageActive(page.name) }" class="pagination__button" type="button">
                     0{{ page.name }}

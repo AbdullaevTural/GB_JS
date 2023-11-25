@@ -1,5 +1,5 @@
 <template>
-    <div :key="item.id" class="article-card__item">
+    <div  class="article-card__item">
         <img :src="item.src" :alt="item.alt" class="article-card__item-image">
         <div class="article-card__item-tagbox">
             <p class="article-card__item-tag">{{ item.tag }}</p>
